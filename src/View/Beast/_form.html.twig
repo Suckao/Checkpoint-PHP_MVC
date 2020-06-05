@@ -1,0 +1,45 @@
+<form method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="title">Name : </label>
+            <input type="text" class="form-control" name="name" placeholder="{{ beast.name }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="area">Area :</label>
+            <input type="text" class="form-control" name="area" placeholder="{{ beast.area }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="area">Picture :</label>
+            <input type="url" class="form-control" name="picture" id="picture" placeholder="insert http/ picture"/>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="size">Size (in meter):</label>
+            <input type="text" class="form-control" name="size" id="size" placeholder="{{ beast.size }}"/>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="planet">Planet :</label>
+            <select name="planet" class="custom-select" id="planet">
+                {% for planets in planet %}
+                <option value={{ planets.id }}>{{ planets.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="movies">Movie :</label>
+            <select name="movie" class="custom-select" id="movies">
+                {% for movies in movie %}
+                <option value={{ movies.id }}>{{ movies.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="form-row">x
+        <div class="form-group col-12">
+            <input type="submit" value="Valider" class="float-right">
+        </div>
+    </div>
+</form>

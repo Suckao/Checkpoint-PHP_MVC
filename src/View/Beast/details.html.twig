@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div class="row">
+        <h1 class="col-12">{{ beast.name }} </h1>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <a href="/Beast/edit/{{ beast.id }}" class="float-right">Edit</a>
+        </div>
+    </div>
+    <div class="row detail">
+        <figure class="col-12 col-md-4">
+            <img src="{{ beast.picture }}" class="img-fluid"/>
+        </figure>
+        <div class="col-12 col-md-8">
+            <p>Area : {{ beast.area }}</p>
+            <p>Size : {{ beast.size }}</p>
+            <p>Planet : {{ beast.planet_name }} </p>
+            <p>Movie(s) : {{ beast.movie_title }}</p>
+        </div>
+    </div>
+    <a href="/beast/list">Back</a>
+{% endblock %}
